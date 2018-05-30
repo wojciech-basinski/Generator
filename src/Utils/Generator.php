@@ -38,6 +38,7 @@ class Generator
      *
      * @param int $numberOfCodes
      * @param int $codeLength
+     * @param string $path path where file will be saved (in cli)
      */
     public function generate(int $numberOfCodes, int $codeLength, string $path = ''): void
     {
@@ -71,13 +72,13 @@ class Generator
      */
     public function getDownloadLink(): string
     {
-        return $this->fileName;
+        return $this->fileName ?? '';
     }
 
     /**
      * @param null|string|int $string
      */
-    public function checkFileString($string):bool
+    public function checkFileString($string): bool
     {
         return (is_string($string) && $string != '');
     }
